@@ -39,8 +39,16 @@
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
-                    </li>
+                         {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">Önceki</a>
+        {% endif %}
+                 
+
+ <li class="next">
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Sonraki</a>
+        {% endif %}
+           </li>
                 </ul>
             </div>
         </div>
