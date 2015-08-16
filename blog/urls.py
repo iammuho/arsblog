@@ -19,11 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from category import views as CategoryViews
 from posts import views as PostsViews
+from index import views as IndexView
+
 
 admin.autodiscover()
 
 urlpatterns = [
-	
+	url(r'^$', IndexView.index, name='index'),
 	url(r'^yazi/(?P<slug>[\w-]+)', PostsViews.detail, name='posts'),
 	url(r'^kategoriler/', CategoryViews.home, name='category'),
     url(r'^admin/', include(admin.site.urls)),
