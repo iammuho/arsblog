@@ -4,4 +4,4 @@ from django.shortcuts import render,render_to_response,RequestContext
 
 def home(request):
 
-	return render_to_response('category.html',locals(),context_instance=RequestContext(request))
+	return render_to_response('category/index.html',locals(),context_instance=RequestContext(request))

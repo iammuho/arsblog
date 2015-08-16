@@ -10,4 +10,6 @@ def detail(request,slug):
 	post = Posts.objects.get(slug=slug)
 
 
+
+
 	return render_to_response('posts/detail.html',locals(),context_instance=RequestContext(request))

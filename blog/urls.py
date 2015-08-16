@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from category import views as CategoryViews
 from posts import views as PostsViews
 from index import views as IndexView
-
+from pages import views as PageViews
 
 admin.autodiscover()
 
@@ -28,7 +28,9 @@ urlpatterns = [
 	url(r'^$', IndexView.index, name='index'),
 	url(r'^yazi/(?P<slug>[\w-]+)', PostsViews.detail, name='posts'),
 	url(r'^kategoriler/', CategoryViews.home, name='category'),
+    url(r'^iletisim/', PageViews.contact, name='iletsim'),
     url(r'^admin/', include(admin.site.urls)),
+
 
 	url(r'^static/(.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
 
